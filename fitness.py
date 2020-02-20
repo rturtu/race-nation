@@ -8,7 +8,7 @@ class Fitness:
 
         # Uncomment for 2nd grade curve example
         # for 2nd_grade_curve
-        # self.position = (-1.415, -1.0)
+         self.position = (-1.415, -1.0)
 
         size = individual.get_gene_length()
         self.positions = [None for i in range(size + 2)]
@@ -23,7 +23,7 @@ class Fitness:
             if self.is_outside(next_position):
                 break
             self.fitness = self.get_distance(next_position, (0, -0.8))
-            self.fitness = next_position[1]
+            #self.fitness = next_position[1]
 
     def get_first_position(self):
         return self.positions[0]
@@ -37,7 +37,7 @@ class Fitness:
         if point is None:
             return True
         # Uncomment for 2nd grade curve example
-        # return is_polynomial_grade_2(point)
+        return is_polynomial_grade_2(point)
         dist = point[0] ** 2 / 2.5 + point[1] ** 2 / 1
         if dist < 0.36:
             return True
